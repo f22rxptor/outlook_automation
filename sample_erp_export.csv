@@ -1,0 +1,11 @@
+sku,raw_chemical_name,cas_number,trade_names,current_stock_kg,reorder_point_kg,category
+CHEM-001-EA,Ethyl Acetate (Industrial Grade #99%),141-78-6,"[""Ethyl Ethanoate"", ""Acetic Ester"", ""Solvent EA""]",15400.5,5000.0,Trading
+CHEM-002-AC,Acetone [High Purity 99.5%],67-64-1,"[""2-Propanone"", ""Dimethyl Ketone"", ""Propan-2-one""]",8250.0,3000.0,Trading
+CHEM-003-IPA,Isopropanol / Isopropyl Alcohol*,67-63-0,"[""IPA"", ""2-Propanol"", ""Rubbing Alcohol""]",24100.0,8000.0,Internal Product
+CHEM-004-MEOH,Methanol (Technical Grade!!),67-56-1,"[""Methyl Alcohol"", ""Wood Spirit"", ""Carbinol""]",31200.0,10000.0,Raw Material
+CHEM-005-TOL,Toluene @ Refined Solvent,108-88-3,"[""Methylbenzene"", ""Toluol"", ""Antisal 1a""]",12750.75,4000.0,Trading
+CHEM-006-SA,Sulfuric Acid {98% Commercial},7664-93-9,"[""Oil of Vitriol"", ""Hydrogen Sulfate"", ""Mattling Acid""]",45000.0,15000.0,Raw Material
+CHEM-007-SH,Sodium Hydroxide (Caustic Flakes~),1310-73-2,"[""Caustic Soda"", ""Lye"", ""Sodium Hydrate""]",28300.0,10000.0,Raw Material
+CHEM-008-THF,Tetrahydrofuran [Stabilized BHT],109-99-9,"[""THF"", ""Oxolane"", ""1,4-Epoxybutane""]",6400.0,2500.0,Internal Product
+CHEM-009-ACN,Acetonitrile (HPLC Grade: 99.9%),75-05-8,"[""Methyl Cyanide"", ""Cyanomethane"", ""ACN Solvent""]",4200.25,1500.0,Trading
+CHEM-010-DCM,Dichloromethane - Premium Solvent$,75-09-2,"[""Methylene Chloride"", ""DCM"", ""Methylene Bichloride""]",19800.0,6000.0,Trading
