@@ -28,8 +28,33 @@ DEFAULT_DB_PATH = "chemicals.db"
 # 1. DATABASE REPOSITORY & DATA ENGINE
 # ---------------------------------------------------------------------------
 
+def ensure_database_ready(db_path: str = DEFAULT_DB_PATH) -> None:
+    """Ensures database and tables exist, auto-initializing from schema.sql if needed on Cloud."""
+    schema_path = "schema.sql"
+    if not os.path.exists(schema_path):
+        return
+    conn = sqlite3.connect(db_path)
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='master_chemical_catalog';")
+        if not cur.fetchone():
+            with open(schema_path, "r", encoding="utf-8") as f:
+                conn.executescript(f.read())
+            conn.commit()
+            # Auto-seed mock catalog records if empty
+            try:
+                from sync_erp_catalog import SAMPLE_ERP_DATA, parse_and_validate_record, upsert_catalog_records
+                recs = [r for raw in SAMPLE_ERP_DATA if (r := parse_and_validate_record(raw))]
+                upsert_catalog_records(db_path, recs)
+            except Exception:
+                pass
+    finally:
+        conn.close()
+
+
 def get_db_connection(db_path: str = DEFAULT_DB_PATH) -> sqlite3.Connection:
     """Establishes SQLite connection with row factory."""
+    ensure_database_ready(db_path)
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
